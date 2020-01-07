@@ -18,7 +18,7 @@ import scala.concurrent.duration._
 
 class SendConnectRequestFragment extends UntabbedRequestFragment {
   import Threading.Implicits.Ui
-
+  
   override protected lazy val footerCallback = new FooterMenuCallback {
     override def onLeftActionClicked(): Unit =
       inject[UsersController].connectToUser(userToConnectId).foreach(_.foreach { _ => getActivity.onBackPressed() })
